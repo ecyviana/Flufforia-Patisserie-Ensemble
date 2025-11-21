@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinky Bakery Shop</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #ffeef5;
+        }
+
+       header {
+    background: url('https://i.pinimg.com/736x/da/62/93/da6293bba9034c7c8dd5eea7e9de8ca7.jpg') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 10px #000;
+    flex-direction: column;
+}
+
+        header h1 {
+            font-size: 58px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        /* MENU GRID */
+        .menu-section {
+            padding: 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 25px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .item {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px #ffbad8;
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: 15px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        button {
+            background: #ff7bbd;
+            color: white;
+            padding: 7px 13px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* CART */
+        #cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            width: 260px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #ff95cb;
+        }
+
+        #cart h3 { margin-top: 0; }
+
+        /* CHECKOUT */
+        .checkout-box {
+            background: #fff2fa;
+            padding: 20px;
+            margin: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #ffb6d9;
+        }
+
+        footer {
+            background: #ffb6d9;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Pinky Bakery Shop</h1>
+        <p>Sweet Cakes • Cute Pastries • Soft Desserts</p>
+    </header>
+
+    <!-- CART -->
+    <div id="cart">
+        <h3>🛍 Cart</h3>
+        <div id="cart-items"></div>
+        <p><b>Total:</b> Rp <span id="total">0</span></p>
+    </div>
+
+    <!-- MENU -->
+    <section class="menu-section">
+
+        <h2 class="section-title">⭐ Pancake Fluffy — Rp 15.000</h2>
+        <div class="menu-grid">
+            <div class="item">
+                <img src="img/Fluffy Fluffy.jpeg">
+                <h4>Matcha Pancake</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Matcha Pancake',15000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Tiramisu pancakes.jpeg">
+                <h4>Tiramisu Pancake</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Tiramisu Pancake',15000)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/dark chocolate oatmeal pancakes.jpeg">
+                <h4>Chocolate Pancake</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Chocolate Pancake',15000)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Red velvet pancakes - Jaimy’s Kitchen.jpeg">
+                <h4>Red Velvet Pancake</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Red Velvet Pancake',15000)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Oreo Pancakes_ The Ultimate Morning Indulgence.jpeg">
+                <h4>Oreo Pancake</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Oreo Pancake',15000)">Add To Cart</button>
+            </div>
+        </div>
+
+
+        <h2 class="section-title">🎂 Sweet Cloud Donut 1 lusin 6pcs— Rp 20.000–40.000</h2>
+        <div class="menu-grid">
+            <div class="item">
+                <img src="img/rose donut.jpeg"
+                <h4>Strawberry Donuts</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Strawberry Donuts',20000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/White Chocolate Strawberry Cream Donuts.jpeg">
+                <h4>Pink Floral Donuts</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Pink Floral Donuts',25000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Chocolate Donuts.jpeg">
+                <h4>Chocolate Donuts</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Chocolate Donuts',30000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Easy Red Velvet Cake Donuts with Cream Cheese Icing.jpeg">
+                <h4>Red Velvet Donuts</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Red Velvet Donuts',35000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Midd Leeast Sector.jpeg">
+                <h4>Blueberry Donuts</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Blueberry Donuts',40000)">Add to Cart</button>
+            </div>
+        </div>
+
+        <h2 class="section-title">🎂 Cute Tart Cake — Rp 20.000–40.000</h2>
+        <div class="menu-grid">
+            <div class="item">
+                <img src="img/Strawberry Rose Tart with Custard Cream – A Floral Fruit Fantasy.jpeg">
+                <h4>Strawberry Tart</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Strawberry Tart',20000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/download (1).jpeg">
+                <h4>Pink Floral Tart</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Pink Floral Tart',25000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Decadent Chocolate Ganache Tartlets.jpeg">
+                <h4>Chocolate Tart</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Chocolate Tart',30000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Red Velvet Strawberry Cheesecake.jpeg">
+                <h4>Red Velvet Tart</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Red Velvet Tart',35000)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="img/Blueberry Lavender Tartlet.jpeg">
+                <h4>Blueberry Tart</h4>
+                <p>⭐⭐⭐⭐⭐ 4.5</p>
+                <button onclick="addToCart('Blueberry Tart',40000)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CHECKOUT SECTION -->
+    <div class="checkout-box">
+        <h2>📦 Checkout</h2>
+
+        <label>Alamat Pengiriman:</label><br>
+        <input type="text" id="address" style="width:100%;padding:8px;border-radius:10px;"><br><br>
+
+        <label>Jarak Pengiriman (KM):</label><br>
+        <input type="number" id="distance" placeholder="contoh: 3" style="width:100%;padding:8px;border-radius:10px;" oninput="countOngkir()"><br><br>
+
+        <p>Ongkir: Rp <span id="ongkir">0</span></p>
+
+        <label>Pembayaran:</label><br>
+        <select id="payment" style="width:100%;padding:8px;border-radius:10px;">
+            <option>Cash</option>
+            <option>Gopay</option>
+            <option>OVO</option>
+            <option>Dana</option>
+            <option>ShopeePay</option>
+        </select>
+
+        <h3>Total Akhir: Rp <span id="grand-total">0</span></h3>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        Pinky Bakery Shop © 2025 • Made with 💗 by Flufforia Pâtisserie Ensemble
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let total = 0;
+
+        function addToCart(name, price) {
+            const list = document.getElementById("cart-items");
+            const newItem = document.createElement("p");
+            newItem.textContent = name + " - Rp " + price.toLocaleString();
+            list.appendChild(newItem);
+
+            total += price;
+            document.getElementById("total").textContent = total.toLocaleString();
+            updateGrandTotal();
+        }
+
+        function countOngkir() {
+            const km = document.getElementById("distance").value;
+            const ongkir = km * 2000;
+            document.getElementById("ongkir").textContent = ongkir.toLocaleString();
+            updateGrandTotal();
+        }
+
+        function updateGrandTotal() {
+            const ongkir = Number(document.getElementById("ongkir").textContent.replace(/\./g, ""));
+            const grand = total + ongkir;
+            document.getElementById("grand-total").textContent = grand.toLocaleString();
+        }
+    </script>
+
+</body>
+</html>
